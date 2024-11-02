@@ -1,20 +1,21 @@
 def display_main_menu():
-    print("display_main_menu")
+    print("“display_main_menu")
 
 def get_user_input():
-    print("get_user_input")
-    # This will return a list of floats later
-    return []
+    user_input = input("Enter a sequence of numbers separated by commas (e.g., 5,67,32): ")
+    string_list = user_input.split(",")
+    float_list = [float(num) for num in string_list]  
+    return float_list
 
 def calc_average(temperatures):
-    print("calc_average")
-    # This will return the average of the temperatures later
-    return 0.0
+    total = sum(temperatures)
+    calc_average = total / len(temperatures)
+    return calc_average
 
 def find_min_max(temperatures):
-    print("find_min_max")
-    # This will return a list in the format [min_temp, max_temp] later
-    return []
+    min_temp = min(temperatures)  # Find minimum temperature
+    max_temp = max(temperatures)  # Find maximum temperature
+    return [int(min_temp), int(max_temp)]  # Return as a list of integers
 
 def sort_temperature(temperatures):
     print("sort_temperature")
@@ -26,5 +27,7 @@ def calc_median_temperature(temperatures):
     # This will return the median temperature later
     return 0.0
 
-# Example call to display the main menu
 display_main_menu()
+temperatures = get_user_input() #Get's the User Inputs
+average = calc_average(temperatures)
+print("The Average is "+ str(average))
